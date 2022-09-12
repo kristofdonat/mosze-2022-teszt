@@ -4,21 +4,16 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; // hianyzik egy _ hibas valtozo
-    std::cout << '1-100 ertekek duplazasa'   //pontosvesszo vegere, dupla ""
-    for (int i = 0;) // hiányoznak a for ciklus paraméterei
-    {
-        b[i] = i * 2; //masodik i az +1
-    }
-    for (int i = 0; i; i++)  //felesleges for ciklus, rossz hatarertek
-    {
-        std::cout << "Ertek:" //hianyzik pontosvesszo, nincs megadva az ertek sem, +std::endl;
+    int* b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa" <<std::endl;
+    for (int i = 0; i < N_ELEMENTS; i++){
+        b[i] = (i+1) * 2;
+        std::cout << "Ertek:" << b[i];
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag; //atlagnak kezdoerteket kell adni, int helyett double javasoltabb
-    for (int i = 0; i < N_ELEMENTS, i++) //vesszo helyett pontosvesszo
-    {
-        atlag += b[i] //hianyzik pontosvesszo
+    double atlag = 0;
+    for (int i = 0; i < N_ELEMENTS; i++){
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
